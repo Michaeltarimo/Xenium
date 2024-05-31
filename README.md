@@ -1,2 +1,1 @@
-# Xenium
-Blockchain project - Open source
+Nextjs
