@@ -31,9 +31,9 @@ const singleword = {
 
 const AnimatedText = ({ text, className = '' }) => {
   return (
-    <div className='w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden sm:py-0'>
+    <div className='text-xl font-bold text-green-500'>
       <motion.h1
-        className={`inline-block w-full text-dark font-bold capitalize text-6xl dark:text-light ${className}`} // Removed text-5xl from className
+        className={`inline-block text-xl font-bold text-green-500 ${className}`} // Removed text-5xl from className
         variants={quote}
         initial='initial'
         animate='animate'

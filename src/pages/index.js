@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 import logo from "@/../public/img/logo.png"
+import AnimatedText from '@/components/AnimatedText'
 
 const index = () => {
   return (
@@ -11,7 +12,8 @@ const index = () => {
         <meta name='description' content='The new Protocol in Pulsechain' />
       </Head>
       <main className="flex items-center justify-center bg-dark pb-10">
-        <div className="flex items-start flex-row justify-start w-full min-h-screen">
+
+        <div className="flex items-start flex-row justify-start w-full min-h-screen md:hidden">
 
           <div className="flex py-2 flex-col items-center justify-start bg-darkest h-screen w-1/6 rounded-b-xl">
 
@@ -120,6 +122,11 @@ const index = () => {
             </div>
           </div>
 
+        </div>
+
+        <div className="hidden md:flex md:flex-col py-10 px-2 w-full h-screen items-center justify-center">
+          <AnimatedText text="Welcome to Xenium" className="text-xl font-bold text-green-500"/>
+          <h1 className="text-sm font-light">Please use Desktop screen to continue ...</h1>
         </div>
       </main>
     </>
