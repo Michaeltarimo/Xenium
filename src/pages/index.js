@@ -15,7 +15,7 @@ const index = () => {
 
         <div className="flex items-start flex-row justify-start w-full min-h-screen md:hidden">
 
-          <div className="flex py-2 flex-col items-center justify-start bg-darkest h-screen w-1/6 rounded-b-xl">
+          <div className="flex py-2 flex-col items-center justify-start bg-darkest h-screen w-1/4 rounded-b-xl">
 
             <nav className="w-full flex items-center justify-center">
               <div>
@@ -56,67 +56,52 @@ const index = () => {
 
           </div>
 
-          <div className="flex flex-col items-start justify-start w-5/6 min-h-screen">
+          <div className="flex flex-col items-start justify-start w-3/4 min-h-screen">
             <nav className="flex w-full bg-darker py-[20px] px-6 font-extrabold text-white text-base">
               <h1>Dashboard</h1>
             </nav>
-            <div className="flex flex-col items-start justify-start w-full mt-5 h-full gap-10">
+            <div className="flex flex-col items-start justify-start w-full mt-12 h-full gap-10">
               <div className="flex flex-row gap-4 items-start justify-start w-full h-full px-6">
 
                 {/**First half */}
-                <div className="flex flex-col w-1/2 gap-4 items-start justify-start">
+                <div className="flex flex-col w-[70%] gap-4 items-start justify-start">
 
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[200px]">
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
                     Box 1
                   </nav>
 
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[316px]">
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
                     Box 2
+                  </nav>
+
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
+                    Box 3
                   </nav>
 
                 </div>
 
 
                 {/**Second half */}
-                <div className="flex flex-col w-1/2 gap-4 items-start justify-start">
+                <div className="flex flex-col w-[30%] gap-4 items-start justify-start">
 
-                  <nav className="flex items-center justify-between w-full h-[200px] gap-4">
-
-                    <div className="flex items-center justify-between border border-white rounded-lg bg-darker w-1/2 h-full">
-                      Box 3
-                    </div>
-                    <div className="flex items-center justify-between border border-white rounded-lg bg-darker w-1/2 h-full">
-                      Box 4
-                    </div>
-
+                  
+                <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
+                    Box 4
+                  </nav>
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
+                    Box 5
+                  </nav>
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
+                    Box 6
                   </nav>
 
 
-                  <nav className="flex gap-4 flex-col items-center justify-between w-full">
-
-                    <div className="flex items-center justify-center border border-white rounded-lg bg-darker w-full h-[200px]">
-                      Box 5
-                    </div>
-
-                    <div className="flex items-center justify-center border border-white rounded-lg bg-darker w-full h-[100px]">
-                      Box 6
-                    </div>
-
-                  </nav>
+        
 
                 </div>
 
 
 
-
-              </div>
-
-
-              {/**The small box at the bottom */}
-              <div className="flex items-center justify-center w-full px-6">
-                <nav className="flex items-center justify-center border border-white rounded-lg bg-darker w-1/4 h-[200px]">
-
-                </nav>
 
               </div>
             </div>
