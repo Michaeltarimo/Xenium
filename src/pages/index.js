@@ -29,19 +29,18 @@ const index = () => {
               <h1 className="text-sm font-light text-gray-400">( 1 batch = 350000000 XEN )</h1>
             </div>
 
-            <div className="flex flex-col border border-gray-300 items-center justify-start p-5 rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[200px]">
+            <div className="flex flex-col border border-gray-300 items-center justify-start py-5 rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[200px]">
               <h1 className="text-xs font-medium text-gray-300">350,000,000.00 XEN</h1>
               <h1 className="text-[10px] text-gray-300 font-medium">Xen to burn</h1>
-              <div className="border2"/>
-              <div className="flex items-center justify-center">
 
-                <nav className="flex rounded-l-sm hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-red-500 mt-4 items-center justify-center border border-gray-400 w-[40px] h-[40px]">
+              <div className="flex items-center justify-center mt-4 w-full">
+                <nav className="flex rounded-l-sm hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-red-500 items-center justify-center border border-gray-400 w-[60px] h-[40px]">
                   <h1 className="cursor-pointer">-</h1>
                 </nav>
-                <nav className="flex text-xs mt-4 items-center justify-center border-t border-b border-gray-400 w-[80px] h-[40px]">
+                <nav className="flex text-xs items-center justify-center border-t border-b border-gray-400 w-full h-[40px]">
                   00000000
                 </nav>
-                <nav className="flex rounded-r-sm hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-green-500 mt-4 items-center justify-center border border-gray-400 w-[40px] h-[40px]">
+                <nav className="flex rounded-r-sm hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-green-500 items-center justify-center border border-gray-400 w-[60px] h-[40px]">
                   <h1 className="">+</h1>
                 </nav>
 
