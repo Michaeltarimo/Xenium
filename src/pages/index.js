@@ -90,32 +90,91 @@ const index = () => {
                 {/**First half */}
                 <div className="flex flex-col w-[70%] gap-4 items-start justify-start">
 
+
+                  {/**First Box */}
                   <nav className="flex items-center justify-between border border-white rounded-lg bg-darker px-4 w-full h-[250px]">
 
                     <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
 
                       <nav className="flex w-full flex-col items-center justify-center gap-2">
                         <h1>Xem minted in current cycle</h1>
-                        <h1 className="font-bold text-white text-base">95 XEM</h1>
+                        <h1 className="font-bold text-white text-sm">9 5 XEM</h1>
                       </nav>
 
                       <nav className="flex w-full flex-col items-center justify-center gap-2">
                         <h1>Total Xem minted</h1>
-                        <h1 className="font-bold text-white text-base">2 3 4 , 2 6 3  XEM</h1>
+                        <h1 className="font-bold text-white text-sm">2 3 4 , 2 6 3  XEM</h1>
                       </nav>
-
 
                     </div>
 
-                  </nav>
+                    <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
 
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
-                    Box 2
-                  </nav>
+                      <nav className="flex w-full flex-col items-center justify-center gap-2">
+                        <h1>Total Xem Burnt</h1>
+                        <h1 className="font-bold text-white text-sm">1 9 2 3 5 XEM</h1>
+                      </nav>
 
+                      <nav className="flex w-full flex-col items-center justify-center gap-2">
+                        <h1>Total Xen Burnt</h1>
+                        <h1 className="font-bold text-white text-sm">1 3 4 , 3 6 2 , 0 0 0  , 0 0 0 , 0 0 0  XEN</h1>
+                      </nav>
+
+                    </div>
+
+                    <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
+
+                      <nav className="flex w-full flex-col items-center justify-center gap-2">
+                        <h1>Total Xem Staked</h1>
+                        <h1 className="font-bold text-white text-sm">2 1 4 , 9 5 5 XEM</h1>
+                      </nav>
+
+                      <nav className="flex w-full flex-col items-center justify-center gap-2">
+                        <h1>Total Xem Unstaked</h1>
+                        <h1 className="font-bold text-white text-sm">2 , 1 4 9  XEM</h1>
+                      </nav>
+
+                    </div>
+
+
+                  </nav>
+                  {/**End of First Box */}
+
+
+
+                  {/**Second Box */}
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker px-4 w-full h-[250px]">
+                    <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
+                      <h1>Total fees collected</h1>
+                      <div className="flex w-full items-center justify-between px-2">
+
+                        <nav className="flex flex-col items-center justify-center gap-6">
+                            <div className="flex w-full items-center justify-between">
+                              <Image src={pulse} alt="pulse logo" className="w-6" />
+                              <h1>Pulse</h1>
+                            </div>
+                            <h1 className="font-bold text-white text-sm">9,214,955,346</h1>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-6">
+                            <div className="flex w-full items-center justify-between">
+                              <Image src={pulse} alt="pulse logo" className="w-6" />
+                              <h1>Pulse</h1>
+                            </div>
+                            <h1 className="font-bold text-white text-sm">9,214,955,346</h1>
+                        </nav>
+
+                      </div>
+                    </div>
+                  </nav>
+                  {/**End of Second Box */}
+
+
+                  {/**Third Box */}
                   <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
                     Box 3
                   </nav>
+                  {/**End of Third Box */}
 
                 </div>
 
