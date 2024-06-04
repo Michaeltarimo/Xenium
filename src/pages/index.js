@@ -53,7 +53,7 @@ const index = () => {
 
               <div className="flex pb-2 text-xs font-bold px-2 mt-5 w-full items-center justify-between">
                 <h1>Fee:</h1>
-                <h1>-30855 PLS</h1>
+                <h1>- 3 0 8 5 5 PLS</h1>
               </div>
 
             </div>
@@ -61,15 +61,15 @@ const index = () => {
             <div className="flex flex-col items-start justify-start border border-gray-300  rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[100px]">
               <nav className="flex w-full text-xs font-bold py-4 px-2 border-b border-gray-300 items-center justify-between">
                   <h1>Protocol fee:</h1>
-                  <h1>1,445,342 PLS </h1>
+                  <h1>1 , 445 , 342 PLS </h1>
               </nav>
               <nav className="flex w-full text-xs font-bold py-4 px-2 items-center justify-between">
                 <h1>Pay in:</h1>
-                <div className="flex items-center justify-center">
-                  <Link href="#"><Image src={pulse} alt="coin" className="w-6"/></Link>
-                  <Link href="#"><Image src={pulsex} alt="coin" className="w-6"/></Link>
-                  <Link href="#"><Image src={hex} alt="coin" className="w-6"/></Link>
-                  <Link href="#"><Image src={inc} alt="coin" className="w-6"/></Link>
+                <div className="flex items-center gap-5 justify-center">
+                  <Link href="#"><Image src={pulse} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105"/></Link>
+                  <Link href="#"><Image src={pulsex} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105"/></Link>
+                  <Link href="#"><Image src={hex} alt="coin" className="w-8 transition transition-transform duration-300 hover:scale-105"/></Link>
+                  <Link href="#"><Image src={inc} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105"/></Link>
                 </div>
               </nav>
             </div>
