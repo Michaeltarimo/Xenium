@@ -90,8 +90,23 @@ const index = () => {
                 {/**First half */}
                 <div className="flex flex-col w-[70%] gap-4 items-start justify-start">
 
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
-                    Box 1
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker px-4 w-full h-[250px]">
+
+                    <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
+
+                      <nav className="flex w-full flex-col items-center justify-center gap-2">
+                        <h1>Xem minted in current cycle</h1>
+                        <h1 className="font-bold text-white text-base">95 XEM</h1>
+                      </nav>
+
+                      <nav className="flex w-full flex-col items-center justify-center gap-2">
+                        <h1>Total Xem minted</h1>
+                        <h1 className="font-bold text-white text-base">2 3 4 , 2 6 3  XEM</h1>
+                      </nav>
+
+
+                    </div>
+
                   </nav>
 
                   <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
