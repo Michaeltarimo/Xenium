@@ -185,7 +185,7 @@ const index = () => {
                               <Image src={logo} alt="pulse logo" className="w-8" />
                               <h1>Xem</h1>
                             </div>
-                            <h1 className="font-bold text-white text-sm">9,214,955,346</h1>
+                            <h1 className="font-bold text-white text-sm">1,346</h1>
                         </nav>
 
                       </div>
