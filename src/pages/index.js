@@ -146,7 +146,7 @@ const index = () => {
                   <nav className="flex items-center justify-between border border-white rounded-lg bg-darker px-4 w-full h-[250px]">
                     <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
                       <h1>Total fees collected</h1>
-                      <div className="flex w-full items-center justify-between px-2">
+                      <div className="flex w-full items-center justify-between px-4">
 
                         <nav className="flex flex-col items-center justify-center gap-6">
                             <div className="flex w-full items-center justify-between">
@@ -158,8 +158,32 @@ const index = () => {
 
                         <nav className="flex flex-col items-center justify-center gap-6">
                             <div className="flex w-full items-center justify-between">
-                              <Image src={pulse} alt="pulse logo" className="w-6" />
-                              <h1>Pulse</h1>
+                              <Image src={pulsex} alt="pulse logo" className="w-6" />
+                              <h1>PulseX</h1>
+                            </div>
+                            <h1 className="font-bold text-white text-sm">6,638,245,346</h1>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-6">
+                            <div className="flex w-full items-center justify-between">
+                              <Image src={hex} alt="pulse logo" className="w-8" />
+                              <h1>Hex</h1>
+                            </div>
+                            <h1 className="font-bold text-white text-sm">637,436,573</h1>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-6">
+                            <div className="flex w-full items-center justify-between">
+                              <Image src={inc} alt="pulse logo" className="w-6" />
+                              <h1>Inc</h1>
+                            </div>
+                            <h1 className="font-bold text-white text-sm">821,536</h1>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-6">
+                            <div className="flex w-full items-center justify-between">
+                              <Image src={logo} alt="pulse logo" className="w-8" />
+                              <h1>Xem</h1>
                             </div>
                             <h1 className="font-bold text-white text-sm">9,214,955,346</h1>
                         </nav>
