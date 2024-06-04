@@ -1,8 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
-import logo from "@/../public/img/logo.png"
-import AnimatedText from '@/components/AnimatedText'
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
+import logo from "@/../public/img/logo.png";
+import AnimatedText from '@/components/AnimatedText';
+import Link from 'next/link';
+import pulse from '@/../public/img/pulse.png';
+import pulsex from '@/../public/img/pulsex.png';
+import hex from '@/../public/img/hex.png';
+import inc from '@/../public/img/inc.png';
 
 const index = () => {
   return (
@@ -15,7 +20,7 @@ const index = () => {
 
         <div className="flex items-start flex-row justify-start w-full min-h-screen md:hidden">
 
-          <div className="flex py-2 flex-col items-center justify-start bg-darkest h-auto w-1/4 rounded-b-xl">
+          <div className="flex py-2 flex-col items-center justify-start bg-darkest h-screen w-1/4 rounded-b-xl">
 
             <nav className="w-full flex items-center justify-center">
               <div>
@@ -26,7 +31,7 @@ const index = () => {
 
             <div className="flex flex-col items-center justify-center pt-24">
               <h1 className="font-medium text-gray-200">Burn Xen to mint Xem</h1>
-              <h1 className="text-sm font-light text-gray-400">( 1 batch = 350000000 XEN )</h1>
+              <h1 className="text-sm font-light text-gray-400">( 1 batch = 350.000.000 XEN )</h1>
             </div>
 
             <div className="flex flex-col border border-gray-300 items-center justify-start rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[150px]">
@@ -53,18 +58,23 @@ const index = () => {
 
             </div>
 
-            <div className="flex flex-col items-start justify-start border border-gray-300  rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[90px]">
+            <div className="flex flex-col items-start justify-start border border-gray-300  rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[100px]">
               <nav className="flex w-full text-xs font-bold py-4 px-2 border-b border-gray-300 items-center justify-between">
                   <h1>Protocol fee:</h1>
                   <h1>1,445,342 PLS </h1>
               </nav>
               <nav className="flex w-full text-xs font-bold py-4 px-2 items-center justify-between">
                 <h1>Pay in:</h1>
-                <div></div>
+                <div className="flex items-center justify-center">
+                  <Link href="#"><Image src={pulse} alt="coin" className="w-6"/></Link>
+                  <Link href="#"><Image src={pulsex} alt="coin" className="w-6"/></Link>
+                  <Link href="#"><Image src={hex} alt="coin" className="w-6"/></Link>
+                  <Link href="#"><Image src={inc} alt="coin" className="w-6"/></Link>
+                </div>
               </nav>
             </div>
 
-            <button className="flex items-center justify-center transition transition-transform duration-500 hover:scale-105 font-bold text-xs py-3 rounded-3xl border border-gray-400 bg-black mt-5 w-[85%]">
+            <button className="flex items-center justify-center transition transition-transform duration-500 hover:scale-105 font-bold text-xs py-3 rounded-3xl border border-gray-400 bg-black mt-10 w-[85%]">
               <b className="text-green-500">Mint</b>&<b className="text-red-500">Burn</b>
             </button>
 
