@@ -293,19 +293,19 @@ const index = () => {
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={pulse} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">9,214,567,342</h1>
+                            <h1 className="font-bold text-white text-sm">9,214,567,342</h1>
                           </nav>
 
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={hex} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">345,564</h1>
+                            <h1 className="font-bold text-white text-sm">345,564</h1>
                           </nav>
 
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={logo} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">267</h1>
+                            <h1 className="font-bold text-white text-sm">2 6 7</h1>
                           </nav>
 
                         </div>
@@ -315,13 +315,13 @@ const index = () => {
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={pulsex} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">2,354,543</h1>
+                            <h1 className="font-bold text-white text-sm">2,354,543</h1>
                           </nav>
 
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={inc} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">10,293</h1>
+                            <h1 className="font-bold text-white text-sm">1 0 , 2 9 3</h1>
                           </nav>
                         </div>
                       </div>
@@ -358,7 +358,7 @@ const index = () => {
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={hex} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">345,564</h1>
+                            <h1 className="font-bold text-white text-sm">345,564</h1>
                           </nav>
 
 
@@ -369,13 +369,13 @@ const index = () => {
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={pulsex} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">2,354,543</h1>
+                            <h1 className="font-bold text-white text-sm">2,354,543</h1>
                           </nav>
 
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={inc} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">10,293</h1>
+                            <h1 className="font-bold text-white text-sm">1 0 , 2 9 3</h1>
                           </nav>
                         </div>
                       </div>
