@@ -339,14 +339,14 @@ const index = () => {
                   {/**Fifth box */}
                   <nav className="flex flex-col items-center justify-between border border-white rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
 
-                    <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm">
+                    <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm gap-5">
 
                       <div className="w-full flex items-center justify-center gap-8">
                         <h1>Buy and Burn Xem</h1>
-                        <Image src={flame} alt="flame logo" className="w-10" />
+                        <Image src={flame} alt="flame logo" className="w-8" />
                       </div>
 
-                      <div className="flex flex-row items-start justify-between px-4 w-full pt-4 gap-4">
+                      <div className="flex flex-row items-start justify-between px-4 w-full pt-6 gap-4">
 
                         <div className="flex w-1/3 flex-col items-start justify-start gap-5">
 
@@ -382,7 +382,7 @@ const index = () => {
 
                       <div className="w-full flex items-end justify-end">
                         <button className="flex w-[48%] transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-2 rounded-3xl px-6 border border-gray-300 items-center justify-center">
-                          Distribute rewards
+                          Buy&Burn
                         </button>
                       </div>
                     </div>
