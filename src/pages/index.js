@@ -352,7 +352,7 @@ const index = () => {
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
                             <Image src={pulse} alt="pulse logo" className="w-6" />
-                            <h1 className="text-sm text-gray-300">9,214,567,342</h1>
+                            <h1 className="font-bold text-white text-sm">9,214,567,342</h1>
                           </nav>
 
 
