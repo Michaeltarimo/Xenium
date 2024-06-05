@@ -9,6 +9,7 @@ import pulsex from '@/../public/img/pulsex.png';
 import hex from '@/../public/img/hex.png';
 import inc from '@/../public/img/inc.png';
 import coinstack from '@/../public/img/coinstack.png';
+import flame from '@/../public/img/flame.png';
 
 
 const index = () => {
@@ -282,8 +283,8 @@ const index = () => {
                     <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm">
 
                       <div className="w-full flex items-center justify-center gap-8">
-                          <h1>Cycle fees collected</h1>
-                          <Image src={coinstack} alt="coin stack logo" className="w-10" />
+                        <h1>Cycle fees collected</h1>
+                        <Image src={coinstack} alt="coin stack logo" className="w-10" />
                       </div>
 
                       <div className="flex flex-row items-start justify-between px-4 w-full pt-4 gap-4">
@@ -291,19 +292,19 @@ const index = () => {
                         <div className="flex w-1/3 flex-col items-start justify-start gap-5">
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
-                            <Image src={pulse} alt="pulse logo" className="w-6"/>
+                            <Image src={pulse} alt="pulse logo" className="w-6" />
                             <h1 className="text-sm text-gray-300">9,214,567,342</h1>
                           </nav>
 
-                          
+
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
-                            <Image src={hex} alt="pulse logo" className="w-6"/>
+                            <Image src={hex} alt="pulse logo" className="w-6" />
                             <h1 className="text-sm text-gray-300">345,564</h1>
                           </nav>
 
-                          
+
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
-                            <Image src={logo} alt="pulse logo" className="w-6"/>
+                            <Image src={logo} alt="pulse logo" className="w-6" />
                             <h1 className="text-sm text-gray-300">267</h1>
                           </nav>
 
@@ -313,13 +314,13 @@ const index = () => {
                         <div className="flex w-1/3 flex-col items-start justify-start gap-5">
 
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
-                            <Image src={pulsex} alt="pulse logo" className="w-6"/>
+                            <Image src={pulsex} alt="pulse logo" className="w-6" />
                             <h1 className="text-sm text-gray-300">2,354,543</h1>
                           </nav>
 
-                          
+
                           <nav className="flex w-full flex-row gap-3 items-center justify-between">
-                            <Image src={inc} alt="pulse logo" className="w-6"/>
+                            <Image src={inc} alt="pulse logo" className="w-6" />
                             <h1 className="text-sm text-gray-300">10,293</h1>
                           </nav>
                         </div>
@@ -327,8 +328,8 @@ const index = () => {
 
                       <div className="w-full flex items-end justify-end">
                         <button className="flex w-[48%] transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-2 rounded-3xl px-6 border border-gray-300 items-center justify-center">
-                            Distribute rewards
-                          </button>
+                          Distribute rewards
+                        </button>
                       </div>
                     </div>
 
@@ -336,8 +337,56 @@ const index = () => {
                   {/**End of Fourth box */}
 
                   {/**Fifth box */}
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
-                    Box 5
+                  <nav className="flex flex-col items-center justify-between border border-white rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
+
+                    <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm">
+
+                      <div className="w-full flex items-center justify-center gap-8">
+                        <h1>Buy and Burn Xem</h1>
+                        <Image src={flame} alt="flame logo" className="w-10" />
+                      </div>
+
+                      <div className="flex flex-row items-start justify-between px-4 w-full pt-4 gap-4">
+
+                        <div className="flex w-1/3 flex-col items-start justify-start gap-5">
+
+                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                            <Image src={pulse} alt="pulse logo" className="w-6" />
+                            <h1 className="text-sm text-gray-300">9,214,567,342</h1>
+                          </nav>
+
+
+                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                            <Image src={hex} alt="pulse logo" className="w-6" />
+                            <h1 className="text-sm text-gray-300">345,564</h1>
+                          </nav>
+
+
+                        </div>
+
+
+                        <div className="flex w-1/3 flex-col items-start justify-start gap-5">
+
+                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                            <Image src={pulsex} alt="pulse logo" className="w-6" />
+                            <h1 className="text-sm text-gray-300">2,354,543</h1>
+                          </nav>
+
+
+                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                            <Image src={inc} alt="pulse logo" className="w-6" />
+                            <h1 className="text-sm text-gray-300">10,293</h1>
+                          </nav>
+                        </div>
+                      </div>
+
+                      <div className="w-full flex items-end justify-end">
+                        <button className="flex w-[48%] transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-2 rounded-3xl px-6 border border-gray-300 items-center justify-center">
+                          Distribute rewards
+                        </button>
+                      </div>
+                    </div>
+
                   </nav>
                   {/**Fifth box */}
 
