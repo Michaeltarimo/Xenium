@@ -237,7 +237,7 @@ const index = () => {
                             <Image src={hex} alt="pulse logo" className="w-8" />
                             <h1>Hex</h1>
                           </div>
-                          <h1 className="font-bold text-white text-sm">637,436,573</h1>
+                          <h1 className="font-bold text-white text-sm">5 5 , 3 4 6</h1>
                           <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
                             Claim
                           </button>
@@ -248,7 +248,7 @@ const index = () => {
                             <Image src={inc} alt="pulse logo" className="w-8" />
                             <h1>Inc</h1>
                           </div>
-                          <h1 className="font-bold text-white text-sm">821,536</h1>
+                          <h1 className="font-bold text-white text-sm">3 4 6</h1>
                           <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
                             Claim
                           </button>
@@ -259,7 +259,7 @@ const index = () => {
                             <Image src={logo} alt="pulse logo" className="w-8" />
                             <h1>Xem</h1>
                           </div>
-                          <h1 className="font-bold text-white text-sm">1,346</h1>
+                          <h1 className="font-bold text-white text-sm">4 6</h1>
                           <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
                             Claim
                           </button>
@@ -276,16 +276,30 @@ const index = () => {
                 {/**Second half */}
                 <div className="flex flex-col w-[30%] gap-4 items-start justify-start">
 
+                  {/**Fourth box */}
+                  <nav className="flex flex-col items-center justify-between border border-white rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
 
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
-                    Box 4
+                    <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm">
+                      <div className="w-full flex items-center justify-center gap-8">
+                          <h1>Cycle fees collected</h1>
+                          <Image src={coinstack} alt="coin stack logo" className="w-10" />
+                      </div>
+                    </div>
+
                   </nav>
+                  {/**End of Fourth box */}
+
+                  {/**Fifth box */}
                   <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
                     Box 5
                   </nav>
+                  {/**Fifth box */}
+
+                  {/**Sixth box */}
                   <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
                     Box 6
                   </nav>
+                  {/**End of Sixth box */}
 
 
 
