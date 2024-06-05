@@ -8,6 +8,8 @@ import pulse from '@/../public/img/pulse.png';
 import pulsex from '@/../public/img/pulsex.png';
 import hex from '@/../public/img/hex.png';
 import inc from '@/../public/img/inc.png';
+import coinstack from '@/../public/img/coinstack.png';
+
 
 const index = () => {
   return (
@@ -43,7 +45,7 @@ const index = () => {
                   <h1 className="cursor-pointer">-</h1>
                 </nav>
                 <nav className="flex text-xs font-bold items-center justify-center border-t border-b border-gray-400 w-full h-[50px]">
-                  00000000
+                  0 0 0 0 0 0 0 0
                 </nav>
                 <nav className="flex font-bold rounded-r-sm hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-green-500 items-center justify-center border border-gray-400 w-[60px] h-[50px]">
                   <h1 className="">+</h1>
@@ -60,16 +62,16 @@ const index = () => {
 
             <div className="flex flex-col items-start justify-start border border-gray-300  rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[100px]">
               <nav className="flex w-full text-xs font-bold py-4 px-2 border-b border-gray-300 items-center justify-between">
-                  <h1>Protocol fee:</h1>
-                  <h1>1 , 445 , 342 PLS </h1>
+                <h1>Protocol fee:</h1>
+                <h1>1 , 445 , 342 PLS </h1>
               </nav>
               <nav className="flex w-full text-xs font-bold py-4 px-2 items-center justify-between">
                 <h1>Pay in:</h1>
                 <div className="flex items-center gap-5 justify-center">
-                  <Link href="#"><Image src={pulse} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105"/></Link>
-                  <Link href="#"><Image src={pulsex} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105"/></Link>
-                  <Link href="#"><Image src={hex} alt="coin" className="w-8 transition transition-transform duration-300 hover:scale-105"/></Link>
-                  <Link href="#"><Image src={inc} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105"/></Link>
+                  <Link href="#"><Image src={pulse} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105" /></Link>
+                  <Link href="#"><Image src={pulsex} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105" /></Link>
+                  <Link href="#"><Image src={hex} alt="coin" className="w-8 transition transition-transform duration-300 hover:scale-105" /></Link>
+                  <Link href="#"><Image src={inc} alt="coin" className="w-6 transition transition-transform duration-300 hover:scale-105" /></Link>
                 </div>
               </nav>
             </div>
@@ -148,44 +150,44 @@ const index = () => {
                       <h1>Total fees collected</h1>
                       <div className="flex w-full items-center justify-between px-4">
 
-                        <nav className="flex flex-col items-center justify-center gap-6">
-                            <div className="flex w-full items-center justify-between">
-                              <Image src={pulse} alt="pulse logo" className="w-6" />
-                              <h1>Pulse</h1>
-                            </div>
-                            <h1 className="font-bold text-white text-sm">9,214,955,346</h1>
+                        <nav className="flex flex-col items-center justify-center gap-10">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={pulse} alt="pulse logo" className="w-6" />
+                            <h1>Pulse</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">9,214,955,346</h1>
                         </nav>
 
-                        <nav className="flex flex-col items-center justify-center gap-6">
-                            <div className="flex w-full items-center justify-between">
-                              <Image src={pulsex} alt="pulse logo" className="w-6" />
-                              <h1>PulseX</h1>
-                            </div>
-                            <h1 className="font-bold text-white text-sm">6,638,245,346</h1>
+                        <nav className="flex flex-col items-center justify-center gap-10">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={pulsex} alt="pulse logo" className="w-6" />
+                            <h1>PulseX</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">6,638,245,346</h1>
                         </nav>
 
-                        <nav className="flex flex-col items-center justify-center gap-6">
-                            <div className="flex w-full items-center justify-between">
-                              <Image src={hex} alt="pulse logo" className="w-8" />
-                              <h1>Hex</h1>
-                            </div>
-                            <h1 className="font-bold text-white text-sm">637,436,573</h1>
+                        <nav className="flex flex-col items-center justify-center gap-10">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={hex} alt="pulse logo" className="w-8" />
+                            <h1>Hex</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">637,436,573</h1>
                         </nav>
 
-                        <nav className="flex flex-col items-center justify-center gap-6">
-                            <div className="flex w-full items-center justify-between">
-                              <Image src={inc} alt="pulse logo" className="w-6" />
-                              <h1>Inc</h1>
-                            </div>
-                            <h1 className="font-bold text-white text-sm">821,536</h1>
+                        <nav className="flex flex-col items-center justify-center gap-10">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={inc} alt="pulse logo" className="w-6" />
+                            <h1>Inc</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">821,536</h1>
                         </nav>
 
-                        <nav className="flex flex-col items-center justify-center gap-6">
-                            <div className="flex w-full items-center justify-between">
-                              <Image src={logo} alt="pulse logo" className="w-8" />
-                              <h1>Xem</h1>
-                            </div>
-                            <h1 className="font-bold text-white text-sm">1,346</h1>
+                        <nav className="flex flex-col items-center justify-center gap-10">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={logo} alt="pulse logo" className="w-8" />
+                            <h1>Xem</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">1,346</h1>
                         </nav>
 
                       </div>
@@ -195,8 +197,76 @@ const index = () => {
 
 
                   {/**Third Box */}
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
-                    Box 3
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full px-4 h-[250px]">
+                    <div className="flex flex-col w-full items-center justify-between gap-10 text-gray-300 font-light text-sm">
+
+                      <div className="w-full flex items-center justify-between px-10">
+                        <h1 className="text-transparent">.</h1>
+                        <div className="flex items-center justify-center">
+                          <h1>Unclaimed fees</h1>
+                          <Image src={coinstack} alt="coin stack logo" className="w-10" />
+                        </div>
+                        <h1>Claim all</h1>
+                      </div>
+                      <div className="flex w-full items-center justify-between px-4">
+
+                        <nav className="flex flex-col items-center justify-center gap-7">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={pulse} alt="pulse logo" className="w-8" />
+                            <h1>Pulse</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">1 , 9 5 5 , 3 4 6</h1>
+                          <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
+                            Claim
+                          </button>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-7">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={pulsex} alt="pulse logo" className="w-8" />
+                            <h1>PulseX</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">4 9 9 , 3 4 6 </h1>
+                          <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
+                            Claim
+                          </button>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-7">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={hex} alt="pulse logo" className="w-8" />
+                            <h1>Hex</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">637,436,573</h1>
+                          <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
+                            Claim
+                          </button>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-7">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={inc} alt="pulse logo" className="w-8" />
+                            <h1>Inc</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">821,536</h1>
+                          <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
+                            Claim
+                          </button>
+                        </nav>
+
+                        <nav className="flex flex-col items-center justify-center gap-7">
+                          <div className="flex w-full items-center justify-between">
+                            <Image src={logo} alt="pulse logo" className="w-8" />
+                            <h1>Xem</h1>
+                          </div>
+                          <h1 className="font-bold text-white text-sm">1,346</h1>
+                          <button className="flex transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-1 rounded-3xl px-6 border border-gray-300 items-center justify-center">
+                            Claim
+                          </button>
+                        </nav>
+
+                      </div>
+                    </div>
                   </nav>
                   {/**End of Third Box */}
 
@@ -206,8 +276,8 @@ const index = () => {
                 {/**Second half */}
                 <div className="flex flex-col w-[30%] gap-4 items-start justify-start">
 
-                  
-                <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
+
+                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
                     Box 4
                   </nav>
                   <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
@@ -218,7 +288,7 @@ const index = () => {
                   </nav>
 
 
-        
+
 
                 </div>
 
@@ -232,7 +302,7 @@ const index = () => {
         </div>
 
         <div className="hidden md:flex md:flex-col py-10 px-2 w-full h-screen items-center justify-center">
-          <AnimatedText text="Welcome to Xenium" className="text-xl font-bold text-green-500"/>
+          <AnimatedText text="Welcome to Xenium" className="text-xl font-bold text-green-500" />
           <h1 className="text-sm font-light">Please use Desktop screen to continue ...</h1>
         </div>
       </main>
