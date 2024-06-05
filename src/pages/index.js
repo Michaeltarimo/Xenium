@@ -95,7 +95,7 @@ const index = () => {
 
 
                   {/**First Box */}
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker px-4 w-full h-[250px]">
+                  <nav className="flex items-center justify-between border border-gray-400 rounded-lg bg-darker px-4 w-full h-[250px]">
 
                     <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
 
@@ -146,7 +146,7 @@ const index = () => {
 
 
                   {/**Second Box */}
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker px-4 w-full h-[250px]">
+                  <nav className="flex items-center justify-between border border-gray-400 rounded-lg bg-darker px-4 w-full h-[250px]">
                     <div className="flex flex-col w-full items-center justify-center gap-10 text-gray-300 font-light text-sm">
                       <h1>Total fees collected</h1>
                       <div className="flex w-full items-center justify-between px-4">
@@ -198,7 +198,7 @@ const index = () => {
 
 
                   {/**Third Box */}
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full px-4 h-[250px]">
+                  <nav className="flex items-center justify-between border border-gray-400 rounded-lg bg-darker w-full px-4 h-[250px]">
                     <div className="flex flex-col w-full items-center justify-between gap-10 text-gray-300 font-light text-sm">
 
                       <div className="w-full flex items-center justify-between px-10">
@@ -278,7 +278,7 @@ const index = () => {
                 <div className="flex flex-col w-[30%] gap-4 items-start justify-start">
 
                   {/**Fourth box */}
-                  <nav className="flex flex-col items-center justify-between border border-white rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
+                  <nav className="flex flex-col items-center justify-between border border-gray-400 rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
 
                     <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm">
 
@@ -337,7 +337,7 @@ const index = () => {
                   {/**End of Fourth box */}
 
                   {/**Fifth box */}
-                  <nav className="flex flex-col items-center justify-between border border-white rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
+                  <nav className="flex flex-col items-center justify-between border border-gray-400 rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
 
                     <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm gap-5">
 
@@ -391,8 +391,13 @@ const index = () => {
                   {/**Fifth box */}
 
                   {/**Sixth box */}
-                  <nav className="flex items-center justify-between border border-white rounded-lg bg-darker w-full h-[250px]">
-                    Box 6
+                  <nav className="flex flex-col items-center justify-between border border-gray-400  rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
+                  <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm gap-5">
+                  <div className="w-full flex items-center justify-between px-5">
+                        <h1>STAKE</h1>
+                        <h1>UNSTAKE</h1>
+                      </div>
+                    </div>
                   </nav>
                   {/**End of Sixth box */}
 
