@@ -1,182 +1,201 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import axios from 'axios';
 import Image from 'next/image';
-import coinstack from '@/../public/img/coinstack.png';
-import flame from '@/../public/img/flame.png';
-import Link from 'next/link';
-import logo from '@/../public/img/logo.png';
 import pulse from '@/../public/img/pulse.png';
 import pulsex from '@/../public/img/pulsex.png';
 import hex from '@/../public/img/hex.png';
 import inc from '@/../public/img/inc.png';
-import xeniumAbi from '../xeniumAbi'; // Adjust the path based on your project structure
+import coinstack from '@/../public/img/coinstack.png';
+import flame from '@/../public/img/flame.png';
+import logo from '@/../public/img/logo.png';
+import AnimatedText from '@/components/AnimatedText';
+import xeniumAbi from '../xeniumAbi';
+import WalletConnect from '../components/WalletConnect';
 
-const xeniumAddress = '0x6B53580EEA2162961B4628Ff361994b754436972';
+const xeniumAddress = '0xbdCF581FF70AAE104D41C6B2AbCb3F29E0bCFB89';
 
 const IndexPage = () => {
-  const [conversionRates, setConversionRates] = useState(null);
   const [protocolFee, setProtocolFee] = useState(0);
   const [batchNumber, setBatchNumber] = useState(1);
-  const [selectedToken, setSelectedToken] = useState('pulsechain');
+  const [selectedToken, setSelectedToken] = useState('PLS');
   const [gasUsed, setGasUsed] = useState(0);
+  const [walletConnected, setWalletConnected] = useState(false);
+  const [walletAddress, setWalletAddress] = useState('');
+  const [provider, setProvider] = useState(null);
+  const [signer, setSigner] = useState(null);
+  const [contract, setContract] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    if (provider && signer) {
+      const xeniumContract = new ethers.Contract(xeniumAddress, xeniumAbi, signer);
+      setContract(xeniumContract);
+    }
+  }, [provider, signer]);
+
+  useEffect(() => {
+    if (walletConnected) {
+      getGasEstimate();
+    }
+  }, [batchNumber, selectedToken, walletConnected]);
+
+  const getGasEstimate = async () => {
+    if (contract) {
       try {
-        const response = await axios.get('http://localhost:3008/api/coingecko');
-        setConversionRates(response.data);
+        const gasEstimate = await contract.estimateGas.burnAndMint(batchNumber, selectedToken);
+        setGasUsed(gasEstimate.toNumber());
+        calculateProtocolFee(gasEstimate.toNumber(), batchNumber, selectedToken); // Call with the latest values
       } catch (error) {
-        console.error('Error fetching conversion rates:', error);
+        console.error('Error estimating gas:', error);
       }
     }
-    fetchData();
-  }, []);
+  };
 
-  useEffect(() => {
-    async function getGasEstimate() {
-      if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined' && conversionRates) {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const xeniumContract = new ethers.Contract(xeniumAddress, xeniumAbi, signer);
+  const calculateProtocolFee = (gasUsed, batchNumber, token) => {
+    if (!gasUsed || !batchNumber) return;
 
-        try {
-          const gasEstimate = await xeniumContract.estimateGas.burnAndMint(batchNumber, selectedToken, 0);
-          setGasUsed(gasEstimate.toNumber());
-        } catch (error) {
-          console.error('Error estimating gas:', error);
-        }
-      }
+    let fee = gasUsed * Math.max(0.5, (1 - 0.0003 * batchNumber)) * batchNumber;
+    if (token === 'PLSX') {
+      fee *= 2.1752;
+    } else if (token === 'HEX') {
+      fee *= 0.0083;
+    } else if (token === 'INC') {
+      fee *= 0.000018;
     }
+    setProtocolFee(fee);
+  };
 
-    getGasEstimate();
-  }, [batchNumber, selectedToken, conversionRates]);
+  const handleBatchIncrease = async () => {
+    const newBatchNumber = batchNumber + 1;
+    setBatchNumber(newBatchNumber);
+    await getGasEstimate(); // Recalculate the gas estimate and protocol fee
+  };
 
-  useEffect(() => {
-    if (conversionRates && gasUsed) {
-      const rate = conversionRates[selectedToken].usd;
-      const fee = gasUsed * (1 - 0.00003 * batchNumber) * batchNumber * rate;
-      setProtocolFee(fee);
+  const handleBatchDecrease = async () => {
+    if (batchNumber > 1) {
+      const newBatchNumber = batchNumber - 1;
+      setBatchNumber(newBatchNumber);
+      await getGasEstimate(); // Recalculate the gas estimate and protocol fee
     }
-  }, [conversionRates, gasUsed, batchNumber, selectedToken]);
+  };
 
-  const handleBatchIncrease = () => setBatchNumber(prevBatch => prevBatch + 1);
-  const handleBatchDecrease = () => batchNumber > 1 && setBatchNumber(prevBatch => prevBatch - 1);
-  const handleTokenSelection = token => setSelectedToken(token);
+  const handleTokenSelection = async (token) => {
+    setSelectedToken(token);
+    await getGasEstimate(); // Recalculate the gas estimate and protocol fee with the selected token
+  };
 
   const handleMintAndBurn = async () => {
-    if (window.ethereum && conversionRates) {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const xeniumContract = new ethers.Contract(xeniumAddress, xeniumAbi, signer);
-
+    if (contract) {
       try {
-        await xeniumContract.burnAndMint(batchNumber, selectedToken, ethers.utils.parseUnits(protocolFee.toString(), 'ether'));
+        await contract.burnAndMint(batchNumber, selectedToken, ethers.utils.parseUnits(protocolFee.toString(), 'ether'));
       } catch (error) {
         console.error('Error executing burnAndMint:', error);
       }
     }
   };
+
+  const formatAddress = (address) => {
+    if (!address) return '';
+    return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+  };
+
   return (
-        <>
-            <main className="flex items-center justify-center bg-dark pb-10">
-                <div className="flex items-start flex-row justify-start w-full min-h-screen md:hidden">
-                    <div className="flex py-2 flex-col items-center justify-start bg-darkest h-screen w-1/4 rounded-b-xl">
-                        <nav className="w-full flex items-center justify-center">
-                            <div>
-                                <Image src={logo} alt="logo" className="w-10" />
-                            </div>
-                            <h1 className="text-base font-extrabold text-white mt-2">Xenium</h1>
-                        </nav>
+    
+    <>
+    
+      <main className="flex items-center justify-center bg-dark pb-10">
+        <div className="flex items-start flex-row justify-start w-full min-h-screen md:hidden">
+          <div className="flex py-2 flex-col items-center justify-start bg-darkest h-screen w-1/4 rounded-b-xl">
+            <nav className="w-full flex items-center justify-center">
+              <div>
+                <Image src={logo} alt="logo" className="w-10" />
+              </div>
+              <h1 className="text-base font-extrabold text-white mt-2">Xenium</h1>
+            </nav>
+            <div className="flex flex-col items-center justify-center pt-24">
+              <h1 className="font-medium text-gray-200">Burn Xen to mint Xem</h1>
+              <h1 className="text-sm font-light text-gray-400">(1 batch = 350,000,000 XEN)</h1>
+            </div>
+            <div className="flex flex-col border border-gray-300 items-center justify-start rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[150px]">
+              <h1 className="text-xs font-bold text-gray-300 mt-2">350,000,000.00 XEN</h1>
+              <h1 className="text-[10px] text-gray-300 font-bold">Xen to burn</h1>
+              <div className="flex items-center justify-center mt-4 w-full">
+                <nav
+                  className="flex font-bold hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-red-500 items-center justify-center border border-gray-400 w-[60px] h-[50px]"
+                  onClick={handleBatchDecrease}
+                >
+                  <h1 className="cursor-pointer">-</h1>
+                </nav>
+                <div className="flex text-xs font-bold items-center justify-center border-t border-b border-gray-400 w-full h-[50px]">
+                  {batchNumber}
+                </div>
+                <nav
+                  className="flex font-bold hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-green-500 items-center justify-center border border-gray-400 w-[60px] h-[50px]"
+                  onClick={handleBatchIncrease}
+                >
+                  <h1 className="">+</h1>
+                </nav>
+              </div>
+              <div className="flex pb-2 text-xs font-bold px-2 mt-5 w-full items-center justify-between">
+                <h1>Fee:</h1>
+                <h1>{gasUsed.toFixed(2)} PLS</h1> {/* Always display gas used for the fee */}
+              </div>
+            </div>
+            <div className="flex flex-col items-start justify-start border border-gray-300 rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[100px]">
+              <nav className="flex w-full text-xs font-bold py-4 px-2 border-b border-gray-300 items-center justify-between">
+                <h1>Protocol fee: {protocolFee}</h1>
+                <h1>{protocolFee.toFixed(2)} {selectedToken}</h1>
+              </nav>
+              <div className="flex w-full text-xs font-bold py-4 px-2 items-center justify-between">
+  <h1>Pay in:</h1>
+  <div className="flex items-center gap-5 justify-center">
+    <button
+      onClick={() => handleTokenSelection('PLS')}
+      className="transition transition-transform duration-300 hover:scale-105"
+    >
+      <Image src={pulse} alt="coin" className="w-6" />
+    </button>
+    <button
+      onClick={() => handleTokenSelection('PLSX')}
+      className="transition transition-transform duration-300 hover:scale-105"
+    >
+      <Image src={pulsex} alt="coin" className="w-6" />
+    </button>
+    <button
+      onClick={() => handleTokenSelection('HEX')}
+      className="transition transition-transform duration-300 hover:scale-105"
+    >
+      <Image src={hex} alt="coin" className="w-8" />
+    </button>
+    <button
+      onClick={() => handleTokenSelection('INC')}
+      className="transition transition-transform duration-300 hover:scale-105"
+    >
+      <Image src={inc} alt="coin" className="w-6" />
+    </button>
+  </div>
+</div>
 
-                        <div className="flex flex-col items-center justify-center pt-24">
-                            <h1 className="font-medium text-gray-200">Burn Xen to mint Xem</h1>
-                            <h1 className="text-sm font-light text-gray-400">(1 batch = 350,000,000 XEN)</h1>
-                        </div>
 
-                        <div className="flex flex-col border border-gray-300 items-center justify-start rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[150px]">
-                            <h1 className="text-xs font-bold text-gray-300 mt-2">350,000,000.00 XEN</h1>
-                            <h1 className="text-[10px] text-gray-300 font-bold">Xen to burn</h1>
-
-                            <div className="flex items-center justify-center mt-4 w-full">
-                                <nav
-                                    className="flex font-bold rounded-l-sm hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-red-500 items-center justify-center border border-gray-400 w-[60px] h-[50px]"
-                                    onClick={() => handleBatchChange(-1)}
-                                >
-                                    <h1 className="cursor-pointer">-</h1>
-                                </nav>
-                                <nav className="flex text-xs font-bold items-center justify-center border-t border-b border-gray-400 w-full h-[50px]">
-                                    {batchNumber}
-                                </nav>
-                                <nav
-                                    className="flex font-bold rounded-r-sm hover:bg-gray-400/50 cursor-pointer transition transition-transform duration-300 hover:scale-105 text-lg font-extrabold text-green-500 items-center justify-center border border-gray-400 w-[60px] h-[50px]"
-                                    onClick={() => handleBatchChange(1)}
-                                >
-                                    <h1 className="">+</h1>
-                                </nav>
-                            </div>
-
-                            <div className="flex pb-2 text-xs font-bold px-2 mt-5 w-full items-center justify-between">
-                              <h1>Fee:</h1>
-                              <h1>{protocolFee.toFixed(2)} {selectedToken === 'pulsechain' ? 'PLS' : selectedToken.toUpperCase()}</h1>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col items-start justify-start border border-gray-300 rounded-lg bg-blue-400/20 w-[85%] mt-5 h-[100px]">
-                            <nav className="flex w-full text-xs font-bold py-4 px-2 border-b border-gray-300 items-center justify-between">
-                                <h1>Protocol fee:</h1>
-                                <h1>{protocolFee.toFixed(2)} {selectedToken}</h1>
-                            </nav>
-                            <nav className="flex w-full text-xs font-bold py-4 px-2 items-center justify-between">
-                                <h1>Pay in:</h1>
-                                <div className="flex items-center gap-5 justify-center">
-                                    <Link href="#">
-                                        <Image
-                                            src={pulse}
-                                            alt="coin"
-                                            className="w-6 transition transition-transform duration-300 hover:scale-105"
-                                            onClick={() => handleTokenChange('pulsechain')}
-                                        />
-                                    </Link>
-                                    <Link href="#">
-                                        <Image
-                                            src={pulsex}
-                                            alt="coin"
-                                            className="w-6 transition transition-transform duration-300 hover:scale-105"
-                                            onClick={() => handleTokenChange('pulsex')}
-                                        />
-                                    </Link>
-                                    <Link href="#">
-                                        <Image
-                                            src={hex}
-                                            alt="coin"
-                                            className="w-8 transition transition-transform duration-300 hover:scale-105"
-                                            onClick={() => handleTokenChange('hex')}
-                                        />
-                                    </Link>
-                                    <Link href="#">
-                                        <Image
-                                            src={inc}
-                                            alt="coin"
-                                            className="w-6 transition transition-transform duration-300 hover:scale-105"
-                                            onClick={() => handleTokenChange('pulsex-incentive-token')}
-                                        />
-                                    </Link>
-                                </div>
-                            </nav>
-                        </div>
-
-                        <button
-                          className="flex items-center justify-center transition transition-transform duration-500 hover:scale-105 font-bold text-xs py-3 rounded-3xl border border-gray-400 bg-black mt-10 w-[85%]"
-                          onClick={handleMintAndBurn}
-                        >
-                          <b className="text-green-500">Mint</b>&<b className="text-red-500">Burn</b>
-                        </button>
-                    </div>
-
-                    <div className="flex flex-col items-start justify-start w-3/4 min-h-screen">
-                        <nav className="flex w-full bg-darker py-[20px] px-6 font-extrabold text-white text-base">
+            </div>
+            <button
+              className="flex items-center justify-center transition transition-transform duration-500 hover:scale-105 font-bold text-xs py-3 rounded-3xl border border-gray-400 bg-black mt-10 w-[85%]"
+              onClick={handleMintAndBurn}
+            >
+              <b className="text-green-500">Mint</b>&<b className="text-red-500">Burn</b>
+            </button>
+          </div>
+          <div className="flex flex-col items-start justify-start w-3/4 min-h-screen">
+                        <nav className="flex w-full bg-darker py-[20px] px-6 font-extrabold text-white text-base justify-between items-center">
                             <h1>Dashboard</h1>
+                            <div>
+                                <WalletConnect
+                                setProvider={setProvider}
+                                setSigner={setSigner}
+                                setWalletConnected={setWalletConnected}
+                                setWalletAddress={setWalletAddress}
+                                walletAddress={walletAddress} // Pass walletAddress as a prop
+                                />
+                            </div>
                         </nav>
                         <div className="flex flex-col items-start justify-start w-full mt-12 h-full gap-10">
                             <div className="flex flex-row gap-4 items-start justify-start w-full h-full px-6">
