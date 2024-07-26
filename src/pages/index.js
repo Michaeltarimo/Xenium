@@ -18,6 +18,7 @@ import Footer from '@/components/Footer';
 
 
 const IndexPage = () => {
+  /**hello  */
   return (
 
     <>
