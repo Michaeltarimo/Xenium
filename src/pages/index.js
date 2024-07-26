@@ -329,7 +329,7 @@ const IndexPage = () => {
                 <div className="flex flex-col w-[30%] gap-4 items-start justify-start">
 
                   {/**Fourth box */}
-                  <nav className="flex flex-col items-center justify-between border border-gray-400 rounded-lg p-4 bg-gradient-to-bl from-white/50 via-sky-500/40 to-darker/50 w-full h-auto">
+                  <nav className="flex flex-col items-center justify-between border border-gray-400 rounded-lg p-4 bg-gradient-to-bl from-white/50 via-sky-500/40 to-darker/50 shadow-lg shadow-sky-500 w-full h-auto">
                     <div className="flex flex-col w-full items-center justify-between text-gray-200 font-light text-sm">
                       <div className="w-full flex items-center justify-center gap-8">
                         <h1 className="font-semibold">Cycle fees collected</h1>
@@ -377,58 +377,54 @@ const IndexPage = () => {
                   {/**End of Fourth box */}
 
                   {/**Fifth box */}
-                  <nav className="flex flex-col items-center justify-between border border-gray-400 rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
-                    <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm gap-5">
+                  <nav className="flex flex-col items-center justify-between border border-gray-400 rounded-lg p-4 bg-gradient-to-bl from-white/50 via-orange-500/40 to-darker/50 shadow-lg shadow-orange-500 w-full h-auto">
+                    <div className="flex flex-col w-full items-center justify-between text-gray-200 font-light text-sm">
                       <div className="w-full flex items-center justify-center gap-8">
-                        <h1>Buy and Burn Xem</h1>
-                        <Image src={flame} alt="flame logo" className="w-8" />
+                        <h1 className="font-semibold">Buy and Burn Xem</h1>
+                        <Image src={flame} alt="coin stack logo" className="w-10" />
                       </div>
 
-                      <div className="flex flex-row items-start justify-between px-4 w-full pt-6 gap-4">
-                        <div className="flex w-1/3 flex-col items-start justify-start gap-5">
-                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                      <div className="flex flex-row items-start justify-between px-4 w-full pt-10 gap-5">
+                        <div className="flex-1 flex flex-col items-start justify-start gap-5">
+                          <nav className="flex w-full flex-col gap-5 items-center justify-center bg-gray-400/10 rounded-md p-2">
                             <Image src={pulse} alt="pulse logo" className="w-6" />
-                            <h1 className="font-bold text-white text-sm">9,214,567,342</h1>
+                            <h1 className="font-bold text-white text-sm">9,214,342</h1>
                           </nav>
 
-                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                          <nav className="flex w-full flex-col gap-5 items-center justify-between bg-gray-400/10 rounded-md p-2">
                             <Image src={hex} alt="pulse logo" className="w-6" />
                             <h1 className="font-bold text-white text-sm">345,564</h1>
                           </nav>
+
+                          <nav className="flex w-full flex-col gap-5 items-center justify-between bg-gray-400/10 rounded-md p-2">
+                            <Image src={logo} alt="pulse logo" className="w-6" />
+                            <h1 className="font-bold text-white text-sm">267</h1>
+                          </nav>
                         </div>
 
-                        <div className="flex w-1/3 flex-col items-start justify-start gap-5">
-                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                        <div className="flex-1 flex flex-col items-start justify-start gap-5">
+                          <nav className="flex w-full flex-col gap-5 items-center justify-between bg-gray-400/10 rounded-md p-2">
                             <Image src={pulsex} alt="pulse logo" className="w-6" />
                             <h1 className="font-bold text-white text-sm">2,354,543</h1>
                           </nav>
 
-                          <nav className="flex w-full flex-row gap-3 items-center justify-between">
+                          <nav className="flex w-full flex-col gap-5 items-center justify-between bg-gray-400/10 rounded-md p-2">
                             <Image src={inc} alt="pulse logo" className="w-6" />
                             <h1 className="font-bold text-white text-sm">10,293</h1>
                           </nav>
                         </div>
                       </div>
 
-                      <div className="w-full flex items-end justify-end">
-                        <button className="flex w-[48%] transition transition-transform duration-300 hover:scale-105 text-sm text-gray-300 py-2 rounded-3xl px-6 border border-gray-300 items-center justify-center">
-                          Buy & Burn
+                      <div className="w-full flex items-center justify-center mt-5">
+                        <button className="flex font-semibold transition transition-transform duration-300 hover:scale-105 text-sm text-gray-200 py-2 rounded-md px-4 border border-gray-300 items-center justify-center">
+                          Distribute rewards
                         </button>
                       </div>
                     </div>
                   </nav>
                   {/**Fifth box */}
 
-                  {/**Sixth box */}
-                  <nav className="flex flex-col items-center justify-between border border-gray-400 rounded-lg px-4 py-4 bg-darker w-full h-[250px]">
-                    <div className="flex flex-col w-full items-center justify-between text-gray-300 font-light text-sm gap-5">
-                      <div className="w-full flex items-center justify-between px-5">
-                        <h1>STAKE</h1>
-                        <h1>UNSTAKE</h1>
-                      </div>
-                    </div>
-                  </nav>
-                  {/**End of Sixth box */}
+                  
                 </div>
               </div>
             </div>
