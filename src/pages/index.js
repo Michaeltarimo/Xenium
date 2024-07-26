@@ -11,6 +11,10 @@ import logo from '@/../public/img/logo.png';
 import AnimatedText from '@/components/AnimatedText';
 import xeniumAbi from '../xeniumAbi';
 import WalletConnect from '../components/WalletConnect';
+import { TimelineIcon } from '@material-tailwind/react';
+import { IconBase } from 'react-icons';
+import { SunIcon } from '@/components/Icons';
+import Footer from '@/components/Footer';
 
 
 const IndexPage = () => {
@@ -18,16 +22,16 @@ const IndexPage = () => {
 
     <>
 
-      <main className="flex items-center justify-center bg-dark pb-10">
+      <main className="flex flex-col items-center justify-center bg-dark pb-10">
         <div className="flex items-start flex-row justify-start w-full min-h-screen md:hidden">
-          <div className="flex py-2 flex-col items-start pl-4 justify-start bg-gradient-to-tr from-dark via-darker to-darkest min-h-screen w-1/4 rounded-b-xl">
-            <nav className="w-full flex items-center justify-center gap-3">
+          <div className="flex  flex-col items-start pl-4 justify-start bg-gradient-to-tr from-gray-400 via-gray-800 to-neutral-800 min-h-screen overflow-y-auto w-1/4 pb-20">
+            <nav className="w-full flex items-center justify-center gap-3 py-[20px]">
               <div>
-                <Image src={logo} alt="logo" className="w-7" />
+                <Image src={logo} alt="logo" className="w-12 animate-bounce" />
               </div>
               <h1 className="text-lg font-extrabold text-white">Xenium</h1>
             </nav>
-            <div className="flex flex-col items-start justify-start pt-24">
+            <div className="flex flex-col items-start justify-start mt-5">
               <h1 className="font-medium text-lg text-gray-200">Burn Xen to mint Xem</h1>
               <h1 className="text-sm font-semibold text-gray-400">(1 batch = 350,000,000 XEN)</h1>
             </div>
@@ -103,12 +107,13 @@ const IndexPage = () => {
             </button>
           </div>
           <div className="flex flex-col items-start justify-start w-3/4 min-h-screen">
-            <nav className="flex w-full py-[20px] px-6 font-extrabold text-white text-base justify-between items-center">
+            <nav className="flex w-full py-[20px] border-b border-neutral-700 sticky top-0 bg-darker px-6 font-extrabold text-white text-base justify-between items-center">
               <h1>Dashboard</h1>
               <div>
+                <SunIcon className='w-5'/>
               </div>
             </nav>
-            <div className="flex flex-col items-start justify-start w-full mt-12 h-full gap-10">
+            <div className="flex flex-col items-start justify-start w-full mt-12 h-full gap-10 overflow-y-auto py-10 max-h-screen">
               <div className="flex flex-row gap-4 items-start justify-start w-full h-full px-6">
                 {/**First half */}
                 <div className="flex flex-col w-[70%] gap-4 items-start justify-start">
@@ -202,7 +207,7 @@ const IndexPage = () => {
                           <Image src={coinstack} alt="coin stack logo" className="w-10" />
                         </div>
                         <button className="bg-blue-400/40 hover:bg-dark/50 font-medium p-2 rounded-md text-xs">Claim all</button>
-                      </div>                      
+                      </div>
                       <div className="grid grid-cols-3 gap-10 w-full items-center justify-center p-4">
                         <nav className="flex flex-col items-center justify-center gap-5 bg-gray-400/10 rounded-md p-2">
                           <div className="flex w-full items-center justify-center gap-5">
@@ -424,12 +429,13 @@ const IndexPage = () => {
                   </nav>
                   {/**Fifth box */}
 
-                  
+
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <Footer />
 
       </main>
     </>
