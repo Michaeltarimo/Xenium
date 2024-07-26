@@ -24,7 +24,7 @@ const IndexPage = () => {
     <>
 
       <main className="flex flex-col items-center justify-center bg-dark pb-10">
-        <div className="flex items-start flex-row justify-start w-full min-h-screen md:hidden">
+        <div className="flex items-start flex-row justify-start w-full min-h-screen lg:hidden">
           <div className="flex  flex-col items-start pl-4 justify-start bg-gradient-to-tr from-gray-400 via-gray-800 to-neutral-800 min-h-screen overflow-y-auto w-1/4 pb-20">
             <nav className="w-full flex items-center justify-center gap-3 py-[20px]">
               <div>
@@ -435,6 +435,9 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="md:block items-center justify-center min-h-screen w-full flex">
+          <h1 className="font-bold text-2xl">Xenium can be accessed in small screens</h1>
         </div>
         <Footer />
 
