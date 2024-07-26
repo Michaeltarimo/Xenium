@@ -111,7 +111,7 @@ const IndexPage = () => {
             <nav className="flex w-full py-[20px] border-b border-neutral-700 sticky top-0 bg-darker px-6 font-extrabold text-white text-base justify-between items-center">
               <h1>Dashboard</h1>
               <div>
-                <SunIcon className='w-5'/>
+                <h1>Connect Wallet</h1>
               </div>
             </nav>
             <div className="flex flex-col items-start justify-start w-full mt-12 h-full gap-10 overflow-y-auto py-10 max-h-screen">
